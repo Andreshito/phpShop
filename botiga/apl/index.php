@@ -1,30 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="ca">
 	<head>
-		<title>
-			FORMULARI DE LOGIN
-		</title>
+		<meta charset="utf-8">
+		<title>phpShop</title>
+		<link rel="stylesheet" href="">
 	</head>
 	<body>
-		<b>FORMULARI DE LOGIN</b><br>
-
-		<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			
-			if ($username == "admin" && $password == "1234") {
-				header("Location: home.php");
-				exit();
-			} else {
-				echo "Error";
-			}
-		}
-		?>
-
-		<form action="" method="POST">
-			Indica el usuari: <input type="text" name="username" required><br>
-			Indica la contrasenya: <input type="password" name="password" required><br>
-			<input type="submit" value="Iniciar sessió"/>
-		</form>
+		<h3><b>Pàgina d'inici</b></h3>
+        <a href="login.php">Login</a><br>        
+        <a href="info.php">Informació</a><br>
+         <label class="diahora"> 
+        <?php
+			date_default_timezone_set('Europe/Andorra');
+			echo "<p>Data i hora: ".date('d/m/Y h:i:s')."</p>";	
+        ?>
+         <label class="diahora"> 
 	</body>
 </html>
