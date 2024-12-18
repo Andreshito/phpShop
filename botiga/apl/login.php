@@ -19,23 +19,25 @@
 <html lang="ca">
 	<head>
 		<meta charset="utf-8">
-		<title>Visualitzador de l'agenda</title>
+		<title>PHP SHOP</title>
 		<link rel="stylesheet" href="agenda.css">
 	</head>
 	<body>
-		<h3><b>Inici de sessió del visualitzador de l'agenda</b></h3>
+		<h3><b>PHP PROJECT</b></h3>
        <form action="login.php" method="POST">
 			<p>Indica el teu nom d'usuari: <input type="text" name="usuari"></p>
 			<p>Indica la teva contrasenya: <input type="password" name="ctsnya"></p>
-			<input type="submit"/ value="Envia">
+			<input type="submit" value="Envia">
 		</form>
 		<p><a href="index.php">Torna a la pàgina inicial</a></p>
         <label class="diahora"> 
         <?php
 			date_default_timezone_set('Europe/Andorra');
-			echo "<p>Data i hora: ".date('d/m/Y h:i:s')."</p>";						
-        ?>
-         <label class="diahora"> 
+			echo "<p>Data i hora: ".date('d/m/Y h:i:s')."</p>";
+			?>
+         </label class="diahora"> 
+		
+		 
 	</body>
 </html>   
     

@@ -3,18 +3,16 @@
 	define('TIMEOUT',5); #TEMPS DE VISUALITZACIÓ DEL MISSATGE INFORMATIU SOBRE LA CREACIÓ D'USUARIS
 	define('COMU',"COMU");
 	define('PROFESSIONAL',"PROFESSIONAL");
-	define('ADMIN',"1");
-	define('USR',"0");
-	define('FITXER_USUARIS',"/var/www/html/agendaV3/usuaris/usuaris");
-	define('FITXER_PERSONAL',"/var/www/html/agendaV3/dades/familia_amics.txt");
-	define('FITXER_PROFESSIONAL',"/var/www/html/agendaV3/dades/professional");
-	define('FITXER_SERVEIS',"/var/www/html/agendaV3/dades/serveis");
+	define('ADMIN',"0");
+	define('CL',"1");
+	define('USR',"2");
+	define('FITXER_USUARIS',"C://xampp/htdocs/SM7.1/phpShop/botiga/usuaris");
 	
 	function fLlegeixFitxer($nomFitxer){
 		if ($fp=fopen($nomFitxer,"r")) {
 			$midaFitxer=filesize($nomFitxer);
 			$dades = explode(PHP_EOL, fread($fp,$midaFitxer));
-			array_pop($dades); //La darrera línia, és una línia en blanc i s'ha d'eliminar de l'array				
+			array_pop($dades);			
 			fclose($fp);
 		}
 		return $dades;
@@ -22,6 +20,7 @@
 	
 	function fAutoritzacio($nomUsuariComprova){
 		$usuaris = fLlegeixFitxer(FITXER_USUARIS);
+		var_dump($usuaris);
 		foreach ($usuaris as $usuari) {
 			$dadesUsuari = explode(":", $usuari);
 			$nomUsuari = $dadesUsuari[0];
